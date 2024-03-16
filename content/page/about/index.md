@@ -2,9 +2,6 @@
 title: "About"
 slug: "about"
 layout: "about"
-aliases:
-  - contact
-lastmod: '2024-03-17'
 comments: false
 outputs:
     - html
