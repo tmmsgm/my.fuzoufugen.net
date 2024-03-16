@@ -8,6 +8,6 @@ menu:
     main:
         weight: 3
         params: 
-            icon: message
+            icon: message-circle
 
 ---
