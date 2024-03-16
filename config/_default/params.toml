@@ -75,7 +75,7 @@ enabled = true
 
 ## Comments
 [comments]
-enabled = bool
+enabled = true
 provider = "disqus"
 
 [comments.disqusjs]
