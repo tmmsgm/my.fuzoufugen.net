@@ -1,6 +1,7 @@
 # Markdown renderer configuration
 [goldmark.renderer]
 unsafe = true
+hardWraps = true
 
 [tableOfContents]
 endLevel = 4
