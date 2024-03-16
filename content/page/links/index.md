@@ -11,7 +11,7 @@ links:
     image: https://commons.wikimedia.org/wiki/File:Logo_of_Twitter.svg#/media/File:X_logo_2023.svg
 menu:
     main: 
-        weight: 5
+        weight: 6
         params:
             icon: link
 
