@@ -19,7 +19,7 @@ subtitle = "WordPressからHugoへの移行にあたって、ブログを再構�
 [sidebar.avatar]
 enabled = true
 local = true
-src = "img/avatar.png"
+src = "img/avatar20190105151353.png"
 
 [article]
 math = false
