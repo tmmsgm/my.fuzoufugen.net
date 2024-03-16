@@ -8,7 +8,7 @@ links:
   - title: X (Twitter) @QQs_013
     description: Twitter のメインアカウントです。
     website: https://twitter.com/QQs_013
-    image: x-logo
+    image: x-logo-black.png
 menu:
     main: 
         weight: 5
