@@ -3,6 +3,7 @@
 title: "About"
 slug: "about"
 layout: "about"
+comments: false
 outputs:
     - html
     - json
