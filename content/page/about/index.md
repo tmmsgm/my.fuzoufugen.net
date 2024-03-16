@@ -2,7 +2,7 @@
 
 title: "About"
 slug: "about"
-date: {{ .Date }}
+date: '2024-03-17'
 aliases:
   - contact
 lastmod: '2024-03-17'
