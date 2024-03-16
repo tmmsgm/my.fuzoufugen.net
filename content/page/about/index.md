@@ -1,8 +1,7 @@
 ---
-
 title: "About"
 slug: "about"
-date: '2024-03-17'
+layout: "about"
 aliases:
   - contact
 lastmod: '2024-03-17'
@@ -15,7 +14,6 @@ menu:
         weight: 2
         params: 
             icon: user
-
 ---
 
 about って何書けばいいの
