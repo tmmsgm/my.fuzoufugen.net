@@ -4,7 +4,7 @@ description: ブログツールの変更
 slug: wordpresstohugo
 date: 2024-03-15T01:40:30+09:00
 categories: 日記
-tags: Blog
+tags:
 image:
 math: false
 license:
