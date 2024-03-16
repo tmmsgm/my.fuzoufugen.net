@@ -7,7 +7,6 @@ categories:
 tags:
 image:
 math: false
-license:
 hidden: false
 comments: false
 draft: true
