@@ -25,8 +25,16 @@ icon = "brand-twitter"
 
 [[social]]
 identifier = "twitter"
-name = "@QQs_013"
+name = "Twitter2"
 url = "https://twitter.com/QQs_013"
 
 [social.params]
 icon = "brand-twitter"
+
+[[myblog]]
+identifier = "blog"
+name = "Blog"
+url = "https://fanfic.uninhabited-pla.net/"
+
+[social.params]
+icon = "book"
