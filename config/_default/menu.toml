@@ -22,3 +22,11 @@ url = "https://twitter.com/28_yaburez"
 
 [social.params]
 icon = "brand-twitter"
+
+[[social]]
+identifier = "twitter"
+name = "@QQs_013"
+url = "https://twitter.com/QQs_013"
+
+[social.params]
+icon = "brand-twitter"
