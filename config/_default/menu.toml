@@ -23,8 +23,8 @@ url = "https://twitter.com/28_yaburez"
 [social.params]
 icon = "brand-twitter"
 
-[[myblog]]
-identifier = "twitter"
+[[social]]
+identifier = "blog"
 name = "Blog"
 url = "https://fanfic.uninhabited-pla.net/"
 
