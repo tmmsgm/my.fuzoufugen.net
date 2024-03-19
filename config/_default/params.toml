@@ -12,6 +12,7 @@ customText = ""
 published = "Jan 02, 2006"
 lastUpdated = "Jan 02, 2006 15:04 MST"
 
+# proven.lol/92e08e
 [sidebar]
 emoji = "🗝"
 subtitle = "WordPressからHugoへの移行にあたって、ブログを再構築中です。目途がつくまで更新できません。"
