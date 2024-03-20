@@ -13,5 +13,5 @@ menu:
             icon: user
 ---
 
-about って何書けばいいの
-連絡先とか？
+公開中プロフィールのまとめは以下のページに
+https://alif.omg.lol
