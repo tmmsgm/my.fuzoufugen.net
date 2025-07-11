@@ -9,7 +9,7 @@ image:
 math: false
 hidden: false
 comments: false
-draft: true
+draft: false
 ---
 
 ## 本当に久しぶりの更新
