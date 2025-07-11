@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>不増不減.net</title><link>https://blog.fuzoufugen.net/</link><description>Recent content on 不増不減.net</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 12 Jul 2025 03:09:21 +0900</lastBuildDate><atom:link href="https://blog.fuzoufugen.net/index.xml" rel="self" type="application/rss+xml"/><item><title>小説はこちら</title><link>https://blog.fuzoufugen.net/p/welcome/</link><pubDate>Fri, 15 Mar 2024 00:26:27 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/welcome/</guid><description>&lt;img src="https://blog.fuzoufugen.net/p/welcome/cover.jpg" alt="Featured image of post 小説はこちら" />&lt;p>BURIJA NAKUTE KATUO DESUYON&lt;br>
+BURIJA NAKUTE KATUO DESUYON&lt;br>
+BURIJA NAKUTE KATUO DESUYON&lt;br>
+BURIJA NAKUTE KATUO DESUYON&lt;br>
+BURIJA NAKUTE KATUO DESUYON&lt;br>
+BURIJA NAKUTE KATUO DESUYON&lt;br>
+BURIJA NAKUTE KATUO DESUYON&lt;br>
+BURIJA NAKUTE KATUO DESUYON&lt;br>
+BURIJA NAKUTE KATUO DESUYON&lt;/p>
+&lt;blockquote>
+&lt;p>Photo by &lt;a class="link" href="https://unsplash.com/@pawel_czerwinski" target="_blank" rel="noopener"
+>Pawel Czerwinski&lt;/a> on &lt;a class="link" href="https://unsplash.com/" target="_blank" rel="noopener"
+>Unsplash&lt;/a>&lt;/p>&lt;/blockquote></description></item><item><title>久しぶりの更新と、Hugoの扱いの難しさ</title><link>https://blog.fuzoufugen.net/p/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AE%E6%9B%B4%E6%96%B0%E3%81%A8hugo%E3%81%AE%E6%89%B1%E3%81%84%E3%81%AE%E9%9B%A3%E3%81%97%E3%81%95/</link><pubDate>Sat, 12 Jul 2025 03:09:21 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AE%E6%9B%B4%E6%96%B0%E3%81%A8hugo%E3%81%AE%E6%89%B1%E3%81%84%E3%81%AE%E9%9B%A3%E3%81%97%E3%81%95/</guid><description>&lt;h2 id="本当に久しぶりの更新">本当に久しぶりの更新
+&lt;/h2>&lt;h3 id="しばらくネットから離れていました">しばらくネットから離れていました
+&lt;/h3>&lt;p>ブログを以前から見ていてくれていた方、お久しぶりです。日記もかねて、ご報告します。リアルの方で無事いろいろと終えました。&lt;/p>
+&lt;p>個人を特定されそうなので書けないことしかないのですが、ネット断ちってのはかなりきつかったです。でもまあいい経験にはなりました。&lt;/p>
+&lt;h2 id="hugoブログに若干の手入れ">Hugo：ブログに若干の手入れ
+&lt;/h2>&lt;h3 id="フォント">フォント
+&lt;/h3>&lt;p>以前の丸っこいフォントから、愛用しているMDPゴシックに変更しました。特に深く考えず、ブログ全体に適用したので、雰囲気がちょっと変わったと思います。変に文字だけがゴツいような印象に変わったように思います。本文をもっと見やすくしたかったので、たぶんずっとこれで行くと思います。&lt;/p>
+&lt;h3 id="テーマのアップデート">テーマのアップデート
+&lt;/h3>&lt;p>Gemini 2.5 に分からないところを投げたら、コード付きですぐに解答をくれました。プログラムの本もまともに読んでないので、人工知能を先生にして、なんとかこのブログを動かしています。&lt;/p>
+&lt;p>モジュールのアップデートして、V.3.0.0 にしました。なんというか、.toml ファイルの中を書き換えてpaginate から[pagination] pagerSize = 10 という表記に書き換えなくちゃいけないそうで、これだけでも難しかったです。いろいろいじってると破損してしまうので、こわごわ行いました。&lt;/p>
+&lt;h2 id="netlify-への移行が失敗">netlify への移行が失敗
+&lt;/h2>&lt;h3 id="なにしたか">なにしたか
+&lt;/h3>&lt;p>いまこのブログはCloudflare Pages で動いているんですが、いつサービスが改悪されるかわからないので、有料でもいいからnetlifyに移行させようと考えたのですが、完全に沼にハマり、もうしっちゃかめっちゃかです。実を言うといまこのブログが問題なく稼働してるのが奇跡なんですよね。一年前に奮闘してどうにかこうやってネットの海に公開できるようにはしたんですが、設定で躓きまくって、どうしよーもない。&lt;/p>
+&lt;p>英語は好きなんですがほとんど読めないので、公式のドキュメントも正しいんだが間違ってるんだが、古いのを読んでるのか新しいのを読んでるのかわからん。Geminiに訊くほかなかったです。&lt;/p>
+&lt;h3 id="触らぬ神に祟りなし">触らぬ神に祟りなし
+&lt;/h3>&lt;p>netlify への移行は諦め、このままcloudflare で運用することにしました。まあ変なことさえしなければ大丈夫だろう。&lt;/p>
+&lt;h2 id="まとめ">まとめ
+&lt;/h2>&lt;p>とりあえずブログについては以上です。今度はもっと日記らしいことを書きます。最近、Sonos のスピーカーを買いそろえました。Era 100二台をリアにして、Sonos Ray を正面に。かなり音質が良いので満足してます。詳しくは次の記事で。ではまた。&lt;/p></description></item><item><title>自分の過去作が解釈違い、という話</title><link>https://blog.fuzoufugen.net/p/%E8%87%AA%E5%88%86%E3%81%AE%E9%81%8E%E5%8E%BB%E4%BD%9C%E3%81%8C%E8%A7%A3%E9%87%88%E9%81%95%E3%81%84%E3%81%A8%E3%81%84%E3%81%86%E8%A9%B1/</link><pubDate>Sun, 17 Mar 2024 17:07:00 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E8%87%AA%E5%88%86%E3%81%AE%E9%81%8E%E5%8E%BB%E4%BD%9C%E3%81%8C%E8%A7%A3%E9%87%88%E9%81%95%E3%81%84%E3%81%A8%E3%81%84%E3%81%86%E8%A9%B1/</guid><description>&lt;h2 id="勢いで書いた過去の自分を呪ってる">勢いで書いた過去の自分を呪ってる
+&lt;/h2>&lt;p>【同人女】おけけパワー中島とゆかいな仲間たち（後編） | 真田つづる - pixiv&lt;br>
+&lt;a class="link" href="https://www.pixiv.net/artworks/116975079#1" target="_blank" rel="noopener"
+>https://www.pixiv.net/artworks/116975079#1&lt;/a>&lt;/p>
+&lt;p>　某所に投稿しているサヴァのシリーズの話。書くのを辞めてしまったわけでは決してないのですが、一話で描写したカオルの行動に関して、もう少し掘り下げて書くべきだったと絶賛後悔中です。&lt;/p>
+&lt;p>　当時は久しぶりにサヴァ熱が再燃したこともあり、自分が10代の頃に触れていたアニメの二次創作が仕上げられてすごく滾っていたので、そのままの勢いで投稿したのですが、エアバスケの試合でルナに抱き着かれて即座に引き離すカオル、というのはちょっと変かなぁと感じました。あまり自分の文章を投稿時以外には見返さないようにしているのですが、ある程度キャラの行動が頭の中で見えるようになるにしたがって、そこまで人目を気にするようなタイプではなく、そこで逆に固く抱きしめ返す、ぐらいのことはするんじゃないのかなあと、書かれたカオルと脳内のカオルのあいだでギャップが生じました。&lt;/p>
+&lt;p>　いっそ該当箇所を書き直そうかとも考えましたが、どちらかといえば恋愛強者ではない、ヘタレ要素のあるカオルの部分は残しておきたいのも事実なので、そういった羞恥の感情を超えてルナに愛をぶつけられるようになる、といった描写を組み込めばいいのかなあと目下考えています。&lt;/p>
+&lt;p>　何はともあれ、アーカイブ用のサイトもこうやって構築できたので、もう少し本腰入れて書きます。&lt;br>
+　pixiv のいいね＆ブクマ、本当にありがたいです！期待しないで待っていただけると幸いです。&lt;/p></description></item><item><title>サイトにR18警告を実装するべき？</title><link>https://blog.fuzoufugen.net/p/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%ABr18%E8%AD%A6%E5%91%8A%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B%E3%81%B9%E3%81%8D/</link><pubDate>Sun, 17 Mar 2024 15:37:54 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%ABr18%E8%AD%A6%E5%91%8A%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B%E3%81%B9%E3%81%8D/</guid><description>&lt;h2 id="これはなに">これはなに
+&lt;/h2>&lt;p>意気揚々とサイトを開設したのは良いんですが、置いている内容が成人向けのモノが主な投稿だとして、未成年の眼に触れないようにする配慮は必要なのでしょうか？&lt;/p>
+&lt;p>巷のアダルト系サイトなどで、クローラー対策を踏まえて「あなたは18才以上ですか？」のような警告文が表示されるようにしているサイトが大半だと思うのですが、やはり用意するべきなのかなあと考えて色々調べましたが、HP作りの専門家や総統に習熟した人でもない限り、この処理を実行できるようにするのは無理そうです……。&lt;/p>
+&lt;p>広告などを設置する予定もほぼないですし、しばらく現状のままで行こうかなと思っています。&lt;br>
+いろいろ訳わかっていないところが多すぎるので、やはり一から勉強するしかないか……。&lt;/p></description></item><item><title>コメントのテスト</title><link>https://blog.fuzoufugen.net/p/%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88/</link><pubDate>Sun, 17 Mar 2024 00:27:22 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88/</guid><description>&lt;h2 id="これはなに">これはなに
+&lt;/h2>&lt;p>コメント機能のテスト用記事です。&lt;/p>
+&lt;h2 id="ルビのテスト兼備忘録">ルビのテスト兼備忘録
+&lt;/h2>&lt;p>&lt;ruby>漢字&lt;rp>（&lt;/rp>&lt;rt>かんじ&lt;/rt>&lt;rp>）&lt;/rp>&lt;/ruby>&lt;/p>
+&lt;h2 id="参考文献url">参考文献・URL
+&lt;/h2>&lt;p>Stack ドキュメント&lt;br>
+&lt;a class="link" href="https://stack.jimmycai.com/config/comments#provider" target="_blank" rel="noopener"
+>https://stack.jimmycai.com/config/comments#provider&lt;/a>&lt;/p>
+&lt;p>giscus&lt;br>
+&lt;a class="link" href="https://cdwilson.dev/articles/using-giscus-for-comments-in-hugo/" target="_blank" rel="noopener"
+>https://cdwilson.dev/articles/using-giscus-for-comments-in-hugo/&lt;/a>&lt;/p>
+&lt;p>HUGOにコメント投稿機能(Disqus)を組み込む方法&lt;br>
+&lt;a class="link" href="https://itsys-tech.com/list/hugo/004/" target="_blank" rel="noopener"
+>https://itsys-tech.com/list/hugo/004/&lt;/a>&lt;/p>
+&lt;p>Hugoにコメント機能を付ける&lt;br>
+&lt;a class="link" href="https://k-kaz-git.github.io/post/hugo-comment/" target="_blank" rel="noopener"
+>https://k-kaz-git.github.io/post/hugo-comment/&lt;/a>&lt;br>
+&lt;a class="link" href="https://k-kaz-git.github.io/post/hugo-comment-giscus/" target="_blank" rel="noopener"
+>https://k-kaz-git.github.io/post/hugo-comment-giscus/&lt;/a>&lt;/p></description></item><item><title>サイトの構築に手間取った話</title><link>https://blog.fuzoufugen.net/p/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E6%A7%8B%E7%AF%89%E3%81%AB%E6%89%8B%E9%96%93%E5%8F%96%E3%81%A3%E3%81%9F%E8%A9%B1/</link><pubDate>Sat, 16 Mar 2024 20:06:52 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E6%A7%8B%E7%AF%89%E3%81%AB%E6%89%8B%E9%96%93%E5%8F%96%E3%81%A3%E3%81%9F%E8%A9%B1/</guid><description>&lt;h2 id="雑感">雑感
+&lt;/h2>&lt;p>三日三晩かけて、ようやくサイトのひな型ができた。結局人気テーマのStack 以外には移れず。&lt;br>
+Github の使い方が分からずに勘でやっていたら、指示通りにすべきところをすっ飛ばしていたり、Hugoの実行ファイルに通常版とextended 版があるのに気付かず詰まったりしていた。&lt;/p>
+&lt;p>英語の解説は目が滑って良くない。&lt;/p>
+&lt;h2 id="hugo-のタグ機能">Hugo のタグ機能
+&lt;/h2>&lt;p>どういうわけか、こういったポストの記事にタグを設定しようとすると、わけのわからないエラーが出てデプロイに失敗する。&lt;br>
+解決策が分からないため放置。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">21:07:37.812 Error: error building site: render: failed to render pages: render of &amp;#34;page&amp;#34; failed: &amp;#34;/opt/buildhome/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!cai!jimmy/hugo-theme-stack/v3@v3.24.1/layouts/_default/baseof.html:4:12&amp;#34;: execute of template failed: template: _default/single.html:4:12: executing &amp;#34;_default/single.html&amp;#34; at &amp;lt;partial &amp;#34;head/head.html&amp;#34; .&amp;gt;: error calling partial: &amp;#34;/opt/buildhome/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!cai!jimmy/hugo-theme-stack/v3@v3.24.1/layouts/partials/head/head.html:15:4&amp;#34;: execute of template failed: template: partials/head/head.html:15:4: executing &amp;#34;partials/head/head.html&amp;#34; at &amp;lt;partial &amp;#34;head/opengraph/include.html&amp;#34; .&amp;gt;: error calling partial: &amp;#34;/opt/buildhome/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!cai!jimmy/hugo-theme-stack/v3@v3.24.1/layouts/partials/head/opengraph/include.html:1:3&amp;#34;: execute of template failed: template: partials/head/opengraph/include.html:1:3: executing &amp;#34;partials/head/opengraph/include.html&amp;#34; at &amp;lt;partial &amp;#34;head/opengraph/provider/base&amp;#34; .&amp;gt;: error calling partial: &amp;#34;/opt/buildhome/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!cai!jimmy/hugo-theme-stack/v3@v3.24.1/layouts/partials/head/opengraph/provider/base.html:22:21&amp;#34;: execute of template failed: template: partials/head/opengraph/provider/base.html:22:21: executing &amp;#34;partials/head/opengraph/provider/base.html&amp;#34; at &amp;lt;.Params.tags&amp;gt;: range can&amp;#39;t iterate over Blog
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">21:07:37.818 Failed: Error while executing user command. Exited with error code: 1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">21:07:37.828 Failed: build command exited with code: 1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">21:07:38.858 Failed: error occurred while running build command
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>という具合。&lt;/p>
+&lt;h2 id="cloudflare-pages">Cloudflare Pages
+&lt;/h2>&lt;p>プレビュー側で依然としてデプロイに失敗するので、もうあきらめて、自動デプロイをOFFにした。&lt;br>
+解決策を知っている方、教えてください……m(__)m&lt;/p></description></item><item><title>Zohoのブラウザ『Ulaa』を使ってみた</title><link>https://blog.fuzoufugen.net/p/zoho%E3%81%AE%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6ulaa%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link><pubDate>Fri, 15 Mar 2024 15:57:57 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/zoho%E3%81%AE%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6ulaa%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</guid><description>&lt;h2 id="これはなに">これはなに
+&lt;/h2>&lt;p>オフィスツールで有名なZohoが作ったブラウザ、『Ulaa』&lt;/p>
+&lt;p>パーソナルモード、デベロッパーモード、キッズモードなどモードを切り替えられるブラウザ。&lt;br>
+Chromium 派生かと思ったら、Brave と外観が似ている。シンプルな見た目だし、軽快に動作するので、以前までいれていた『Avast Secure Browser』を代替して使用している。&lt;br>
+当然Zohoのサービスが使いやすいのも優れている。スタートページは独自仕様で、よく訪れるサイトなどが表示される形式。&lt;/p>
+&lt;h2 id="自動アップデートが上手く行かない">自動アップデートが上手く行かない
+&lt;/h2>&lt;p>自分の環境だけかもしれないが、内蔵されている自動アップデーターがインストールされておらず、アップデートに手間取る。いまはいちいちインストーラーを公式サイトから入手して、その都度アップデートしている。ヘルプにあるように一度削除して、インストールし直した方が良いかもしれない。&lt;/p>
+&lt;h2 id="参考文献url">参考文献・URL
+&lt;/h2>&lt;p>ulaa - zoho&lt;br>
+&lt;a class="link" href="https://ulaa.com/" target="_blank" rel="noopener"
+>https://ulaa.com/&lt;/a>&lt;/p>
+&lt;p>How to fix Ulaa update issue in Windows - Ulaa Support&lt;br>
+&lt;a class="link" href="https://ulaabrowser.zohodesk.com/portal/en/kb/articles/windows-update-troubleshooting" target="_blank" rel="noopener"
+>https://ulaabrowser.zohodesk.com/portal/en/kb/articles/windows-update-troubleshooting&lt;/a>&lt;/p>
+&lt;p>Chromium 派生ブラウザ総合　まとめWiki&lt;br>
+&lt;a class="link" href="https://w.atwiki.jp/chromiumbased/" target="_blank" rel="noopener"
+>https://w.atwiki.jp/chromiumbased/&lt;/a>&lt;/p></description></item><item><title>Archives</title><link>https://blog.fuzoufugen.net/archives/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>https://blog.fuzoufugen.net/archives/</guid><description/></item><item><title>WordPressToHugo</title><link>https://blog.fuzoufugen.net/p/wordpresstohugo/</link><pubDate>Fri, 15 Mar 2024 01:40:30 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/wordpresstohugo/</guid><description>&lt;h2 id="wordpress-に敗退">WordPress に敗退
+&lt;/h2>&lt;p>せっかくレンタルサーバーまで借りてドメイン購入後にWordPress をインストールしたまでは良かったんだけど、なんとなく選んだテーマにとっつきにくさを感じ、Hugoにすることにした。&lt;br>
+決め手は、pixiv ノベルのUIに外観を寄せたテーマがgithub で公開されていたから。ほとんど一目ぼれして、さっそく環境構築したんだけど、これがむずかしいのなんの……。コマンドラインとかターミナルとか、かなり長くパソコンを触ってきた割にはあまり触れてこなかったし、ときどき発作的にプログラマになろうとして挫折もかなりした。&lt;br>
+ソフトのインストールぐらいはできるし、環境変数の設定とかもブログの記事見ながらならなんとなくできるんだけど、実際それがどういう原理で動いてるのかわからないと不安になる。ケモノの内蔵触ってるみたいな感じでおっかなびっくり。&lt;br>
+まあなんとか実行ファイルをフォルダに入れて見様見真似でやって、気づいたらこの時間ですわ。&lt;/p>
+&lt;h2 id="cloudflare-pages">Cloudflare pages
+&lt;/h2>&lt;p>サーバーをわざわざ契約しなくてもこっちのタイプのブログならほぼノーコストでできると知った。WordPressはロリポップで運用しているが、いちいちユーザー名やパスワードを入れなきゃいけないのが面倒くさいため、昔のHTMLに似たこのやり方の方がトータルでは楽なのかも知れない。&lt;/p>
+&lt;p>Github のリポジトリと連携してデプロイ？をほぼ全自動でやってくれるため、わけがわからないままやってもなんとかなった。&lt;br>
+ただ、なぜか本番側のデプロイは上手く行っているのに、プレビュー版が構築に失敗しているらしくエラーを吐いている。これは無視。ログに表示されているエラーコードをいくら読んでも原因が分からない、本番さえうまく動いてくれればいい。&lt;/p>
+&lt;h2 id="総評">総評
+&lt;/h2>&lt;p>WordPress で作ったサイトよりもかなり早くサイトを読み込んでくれるため、ストレスフリーですばらしい。煩わしいプラグインの管理からも解放されたので、満足している。なによりも手作りであることが良い。&lt;/p>
+&lt;p>今日は眠いので作業の詳細は後日。&lt;/p>
+&lt;h2 id="参考文献url">参考文献・URL
+&lt;/h2>&lt;p>以下世話になったサイトなど&lt;/p>
+&lt;p>Stack&lt;br>
+&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-theme-stack/" target="_blank" rel="noopener"
+>https://themes.gohugo.io/themes/hugo-theme-stack/&lt;/a>&lt;br>
+人気の高いテーマっぽい。結構使ってる人を見かける。&lt;/p>
+&lt;p>vnovel&lt;br>
+&lt;a class="link" href="https://github.com/tmmsgm/vnovel" target="_blank" rel="noopener"
+>https://github.com/tmmsgm/vnovel&lt;/a>&lt;br>
+pixiv ノベルライクなテーマ。まんま。&lt;/p>
+&lt;p>Cloudflare Pages&lt;br>
+&lt;a class="link" href="https://pages.cloudflare.com/" target="_blank" rel="noopener"
+>https://pages.cloudflare.com/&lt;/a>&lt;br>
+ﾈ申。マジで。全自動でなにもかもやってくれる。&lt;/p>
+&lt;p>Hugo 静的サイトジェネレーターによるサイト構築と公開　パソコン工房NEXMAG&lt;br>
+&lt;a class="link" href="https://www.pc-koubou.jp/magazine/30737?utm_source=pocket_saves" target="_blank" rel="noopener"
+>https://www.pc-koubou.jp/magazine/30737?utm_source=pocket_saves&lt;/a>&lt;br>
+Hugoインストールはこの記事のおかげで楽だった。フォルダ階層の仕組みもなんとか頭に入った。&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>https://blog.fuzoufugen.net/p/markdown-syntax-guide/</link><pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate><guid>https://blog.fuzoufugen.net/p/markdown-syntax-guide/</guid><description>&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+&lt;h2 id="headings">Headings
+&lt;/h2>&lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
+&lt;h1 id="h1">H1
+&lt;/h1>&lt;h2 id="h2">H2
+&lt;/h2>&lt;h3 id="h3">H3
+&lt;/h3>&lt;h4 id="h4">H4
+&lt;/h4>&lt;h5 id="h5">H5
+&lt;/h5>&lt;h6 id="h6">H6
+&lt;/h6>&lt;h2 id="paragraph">Paragraph
+&lt;/h2>&lt;p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p>
+&lt;p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p>
+&lt;h2 id="blockquotes">Blockquotes
+&lt;/h2>&lt;p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code>footer&lt;/code> or &lt;code>cite&lt;/code> element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p>
+&lt;h3 id="blockquote-without-attribution">Blockquote without attribution
+&lt;/h3>&lt;blockquote>
+&lt;p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.&lt;br>
+&lt;strong>Note&lt;/strong> that you can use &lt;em>Markdown syntax&lt;/em> within a blockquote.&lt;/p>&lt;/blockquote>
+&lt;h3 id="blockquote-with-attribution">Blockquote with attribution
+&lt;/h3>&lt;blockquote>
+&lt;p>Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br>&lt;br>
+— &lt;cite>Rob Pike&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/cite>&lt;/p>&lt;/blockquote>
+&lt;h2 id="tables">Tables
+&lt;/h2>&lt;p>Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Age&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Bob&lt;/td>
+&lt;td>27&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Alice&lt;/td>
+&lt;td>23&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="inline-markdown-within-tables">Inline Markdown within tables
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Italics&lt;/th>
+&lt;th>Bold&lt;/th>
+&lt;th>Code&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>italics&lt;/em>&lt;/td>
+&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>A&lt;/th>
+&lt;th>B&lt;/th>
+&lt;th>C&lt;/th>
+&lt;th>D&lt;/th>
+&lt;th>E&lt;/th>
+&lt;th>F&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td>
+&lt;td>Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td>
+&lt;td>Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td>
+&lt;td>Proin sit amet velit nec enim imperdiet vehicula.&lt;/td>
+&lt;td>Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td>
+&lt;td>Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="code-blocks">Code Blocks
+&lt;/h2>&lt;h3 id="code-block-with-backticks">Code block with backticks
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Example HTML5 Document&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Test&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="code-block-indented-with-four-spaces">Code block indented with four spaces
+&lt;/h3>&lt;pre>&lt;code>&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;h3 id="diff-code-block">Diff code block
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">[dependencies.bevy]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git = &amp;#34;https://github.com/bevyengine/bevy&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rev = &amp;#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">- features = [&amp;#34;dynamic&amp;#34;]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+ features = [&amp;#34;jpeg&amp;#34;, &amp;#34;dynamic&amp;#34;]
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="one-line-code-block">One line code block
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>A paragraph&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="list-types">List Types
+&lt;/h2>&lt;h3 id="ordered-list">Ordered List
+&lt;/h3>&lt;ol>
+&lt;li>First item&lt;/li>
+&lt;li>Second item&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ol>
+&lt;h3 id="unordered-list">Unordered List
+&lt;/h3>&lt;ul>
+&lt;li>List item&lt;/li>
+&lt;li>Another item&lt;/li>
+&lt;li>And another item&lt;/li>
+&lt;/ul>
+&lt;h3 id="nested-list">Nested list
+&lt;/h3>&lt;ul>
+&lt;li>Fruit
+&lt;ul>
+&lt;li>Apple&lt;/li>
+&lt;li>Orange&lt;/li>
+&lt;li>Banana&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dairy
+&lt;ul>
+&lt;li>Milk&lt;/li>
+&lt;li>Cheese&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark
+&lt;/h2>&lt;p>&lt;abbr title="Graphics Interchange Format">GIF&lt;/abbr> is a bitmap image format.&lt;/p>
+&lt;p>H&lt;sub>2&lt;/sub>O&lt;/p>
+&lt;p>X&lt;sup>n&lt;/sup> + Y&lt;sup>n&lt;/sup> = Z&lt;sup>n&lt;/sup>&lt;/p>
+&lt;p>Press &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>ALT&lt;/kbd> + &lt;kbd>Delete&lt;/kbd> to end the session.&lt;/p>
+&lt;p>Most &lt;mark>salamanders&lt;/mark> are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>The above quote is excerpted from Rob Pike&amp;rsquo;s &lt;a class="link" href="https://www.youtube.com/watch?v=PAAkCSZUG1c" target="_blank" rel="noopener"
+>talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>About</title><link>https://blog.fuzoufugen.net/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.fuzoufugen.net/about/</guid><description>&lt;p>公開中プロフィールのまとめは以下のページに&lt;br>
+&lt;a class="link" href="https://alif.omg.lol" target="_blank" rel="noopener"
+>https://alif.omg.lol&lt;/a>&lt;/p></description></item><item><title>Links</title><link>https://blog.fuzoufugen.net/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.fuzoufugen.net/links/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">links&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://www.typescriptlang.org&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ts-logo-128.jpg&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item><item><title>Message</title><link>https://blog.fuzoufugen.net/message/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.fuzoufugen.net/message/</guid><description/></item><item><title>Search</title><link>https://blog.fuzoufugen.net/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.fuzoufugen.net/search/</guid><description/></item></channel></rss>
