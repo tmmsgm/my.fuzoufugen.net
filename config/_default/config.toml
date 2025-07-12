@@ -14,8 +14,22 @@ defaultContentLanguage = "ja"
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage = true
 
-# Change it to your Disqus shortname before using
-disqusShortname = "https-blog-fuzoufugen-net"
+comments:
+    enabled: true
+    provider: giscus
+
+...
+
+    giscus:
+        repo: tmmsgm/fuzoufugen-hugo-comment
+        repoID: R_kgDOPLigVQ
+        category: Announcements
+        categoryID: DIC_kwDOPLigVc4Cs3sB
+        mapping: pathname
+        lightTheme: light
+        darkTheme: dark
+        reactionsEnabled: 1
+        emitMetadata: 0
 
 # Robots
 enableRobotsTXT = true
