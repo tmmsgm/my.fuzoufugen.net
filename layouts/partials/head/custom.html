@@ -1,26 +1,30 @@
-<style>
-  :root {
-    --ja-g-font-family: "BIZ UDPGothic", sans-serif;
-    --article-font-family: var(--ja-g-font-family), var(--base-font-family);
-    --base-font-family: var(--ja-g-font-family), 'Lato', var(--sys-font-family),
-      var(--zh-font-family), sans-serif;
-    --code-font-family: 'Ricty Diminished', Menlo, Monaco, Consolas,
-      'Courier New', monospace;
-  }
-</style>
+ <style>
+    :root {
+      --ja-g-font-family: 'Noto Sans JP', '游ゴシック', '游ゴシック Medium',
+        'Yu Gothic Medium', '游ゴシック体', 'Yu Gothic', YuGothic,
+        'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo';
 
-<script>
-  (function () {
-    const customFont = document.createElement('link');
-    customFont.href =
-      'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap';
+      --article-font-family: var(--ja-g-font-family), var(--base-font-family);
+      --base-font-family: var(--ja-g-font-family), 'Lato', var(--sys-font-family),
+        var(--zh-font-family), sans-serif;
+      --code-font-family: 'Ricty Diminished', Menlo, Monaco, Consolas,
+        'Courier New', monospace;
+      --article-line-height: 1.9;
+    }
+ </style>
 
-    customFont.type = 'text/css';
-    customFont.rel = 'stylesheet';
+ <script>
+    (function () {
+      const customFont = document.createElement('link');
+      customFont.href =
+        'https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap';
 
-    document.head.appendChild(customFont);
-  })();
-</script>
+      customFont.type = 'text/css';
+      customFont.rel = 'stylesheet';
+
+      document.head.appendChild(customFont);
+    })();
+ </script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT5JB2RPFV"></script>
