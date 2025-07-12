@@ -8,7 +8,7 @@ tags:
 image:
 math: false
 hidden: false
-comments: false
+comments: true
 draft: false
 ---
 
