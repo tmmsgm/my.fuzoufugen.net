@@ -1,28 +1,11 @@
 ---
 title: 口述筆記させてみた＆AIによる校正記事
-description:
-slug: 口述筆記させてみた＆AIによる校正記事
+description: 今までのコメントシステムが不安定だったので、軽くていい感じの「Giscus」に乗り換えた話。設定方法や、唯一のネックについても触れておきます。
+slug: switched-to-giscus-comments
 date: 2025-07-13T13:42:13+09:00
 categories: 日記
 tags:
  - Hugo
-image:
-math: false
-hidden: false
-comments: true
-draft: false
----
----
-title: ブログのコメントシステムを「Giscus」に変えてみた
-description: 今までのコメントシステムが不安定だったので、軽くていい感じの「Giscus」に乗り換えた話。設定方法や、唯一のネックについても触れておきます。
-slug: switched-to-giscus-comments
-date: 2025-07-13T13:40:20+09:00
-categories:
-  - Hugo
-tags:
-  - Stack
-  - Giscus
-  - コメント
 image:
 math: false
 hidden: false
