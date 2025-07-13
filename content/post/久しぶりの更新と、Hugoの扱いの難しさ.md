@@ -47,3 +47,11 @@ netlify への移行は諦め、このままcloudflare で運用することに�
 ## まとめ
 
 とりあえずブログについては以上です。今度はもっと日記らしいことを書きます。最近、Sonos のスピーカーを買いそろえました。Era 100二台をリアにして、Sonos Ray を正面に。かなり音質が良いので満足してます。詳しくは次の記事で。ではまた。
+
+## 参考にしたサイト
+
+HugoのStackテーマのブログにgiscusを導入する - かつおぶしのブログ
+https://blog.k-bushi.com/post/tech/web/instoducing-giscus-with-hugo-stack/
+
+Hugoにコメント機能を付ける（giscus編） - k-kaz が Hugo で遊ぶサイト
+https://k-kaz-git.github.io/post/hugo-comment-giscus/
