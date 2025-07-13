@@ -128,13 +128,13 @@ serverName = "cactus.chat"
 siteName = ""
 
 [comments.giscus]
-repo = ""
-repoID = ""
-category = ""
-categoryID = ""
-mapping = ""
-lightTheme = ""
-darkTheme = ""
+repo = "tmmsgm/fuzoufugen-hugo-comment"
+repoID = "R_kgDOPLigVQ"
+category = "Announcements"
+categoryID = "DIC_kwDOPLigVc4Cs3sB"
+mapping = "pathname"
+lightTheme = "light"
+darkTheme = "dark"
 reactionsEnabled = 1
 emitMetadata = 0
 

@@ -14,23 +14,5 @@ defaultContentLanguage = "ja"
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage = true
 
-[params.comments]
-  # enabled の値は true または false です
-  enabled = true 
-  # provider の値は文字列なので "..." で囲みます
-  provider = "giscus" 
-
-[params.comments.giscus]
-  # すべての行が key = "value" の形式になっているか確認します
-  repo = "tmmsgm/fuzoufugen-hugo-comment"
-  repoId = "R_kgDOPLigVQ"
-  category = "Announcements"
-  categoryId = "DIC_kwDOPLigVc4Cs3sB"
-  mapping = "pathname"
-  lang = "ja"
-  theme = "preferred_color_scheme"
-  reactionsEnabled = "1"
-  emitMetadata = "0"
-
 # Robots
 enableRobotsTXT = true
