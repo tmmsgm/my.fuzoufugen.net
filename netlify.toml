@@ -1,0 +1,11 @@
+[build]
+  # ビルドコマンド
+  command = "hugo --gc --minify"
+  
+  # ビルド後の公開ディレクトリ
+  publish = "public"
+
+[context.production.environment]
+  # Netlifyで使用するHugoのバージョンを指定します。
+  # ご自身のローカル環境のバージョンに合わせてください。
+  HUGO_VERSION = "0.148.0"
