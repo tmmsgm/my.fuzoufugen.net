@@ -7,7 +7,7 @@ links:
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   - title: X (Twitter) @QQs_013
     description: Twitter のメインアカウントです。
-    website: https://twitter.com/QQs_013
+    website: https://x.com/QQs_013
     image: https://commons.wikimedia.org/wiki/File:Logo_of_Twitter.svg#/media/File:X_logo_2023.svg
 menu:
     main: 
