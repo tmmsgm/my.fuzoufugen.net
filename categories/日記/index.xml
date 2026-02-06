@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>日記 on 不増不減.net</title><link>https://blog.fuzoufugen.net/categories/%E6%97%A5%E8%A8%98/</link><description>Recent content in 日記 on 不増不減.net</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 14 Jul 2025 06:02:26 +0900</lastBuildDate><atom:link href="https://blog.fuzoufugen.net/categories/%E6%97%A5%E8%A8%98/index.xml" rel="self" type="application/rss+xml"/><item><title>Netlifyでのデプロイに成功、移行はせずテスト用として運用</title><link>https://blog.fuzoufugen.net/p/netlify%E3%81%A7%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%81%AB%E6%88%90%E5%8A%9F%E7%A7%BB%E8%A1%8C%E3%81%AF%E3%81%9B%E3%81%9A%E3%83%86%E3%82%B9%E3%83%88%E7%94%A8%E3%81%A8%E3%81%97%E3%81%A6%E9%81%8B%E7%94%A8/</link><pubDate>Mon, 14 Jul 2025 06:02:26 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/netlify%E3%81%A7%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%81%AB%E6%88%90%E5%8A%9F%E7%A7%BB%E8%A1%8C%E3%81%AF%E3%81%9B%E3%81%9A%E3%83%86%E3%82%B9%E3%83%88%E7%94%A8%E3%81%A8%E3%81%97%E3%81%A6%E9%81%8B%E7%94%A8/</guid><description>&lt;h1 id="導入ようやくデプロイ完了"&gt;導入：ようやくデプロイ完了
+&lt;/h1&gt;&lt;h2 id="デプロイ時のパラメータの設定に失敗してたっぽい"&gt;デプロイ時のパラメータの設定に失敗してたっぽい
+&lt;/h2&gt;&lt;p&gt;なんで上手く行かないのか数時間格闘していたんですが、初心者が故の落とし穴でしたね……。でもnetlify.tomlをroot フォルダに置かないとダメ、ってそんなの判るわけないでしょう。設定からいじれると思い込んでいたので、何度やってもドツボにハマるばかりでだめでした。&lt;/p&gt;
+&lt;h3 id="netlifytoml"&gt;netlify.toml
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;[build]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; # ビルドコマンド
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; command = &amp;#34;hugo --gc --minify&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; # ビルド後の公開ディレクトリ
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; publish = &amp;#34;public&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;[context.production.environment]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; # Netlifyで使用するHugoのバージョンを指定します。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; # ご自身のローカル環境のバージョンに合わせてください。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; HUGO_VERSION = &amp;#34;0.148.0&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="cloudflare-pages-からの以降は保留中"&gt;Cloudflare Pages からの以降は保留中
+&lt;/h2&gt;&lt;p&gt;いっそ有料でもいいや、と思って移行を考えていたのですが、今のブログで容量が足りなくなるのは遠い未来のことだと思われるので、しばらくこのままでいくことにしました。とりあえず本番環境がCloudflare Pages に任せて、こっちはテスト用にしますかね。あるいは、vNovel テーマで運用しているもう一つのブログ（小説を置いている方）をnetlify での管理にして、分散させようと考えています。&lt;/p&gt;
+&lt;h2 id="まとめ"&gt;まとめ
+&lt;/h2&gt;&lt;p&gt;とにかく上手く行ったのでよしとします。ブログ周りはもう代替いじり終えたので、あとは内容の充実ですかね。こんなふうに、技術的なこととか益体もないことを日記的に更新していくブログにしたいと考えてます。小説は、書きたくなったら。小説はいったんこっちでも公開しますが、ここで公開しているだけだと続けて読むのが大変なので、それをvNovel の方でアーカイブ的に整理するのが目標です。とにかく書かなくては。&lt;/p&gt;</description></item><item><title>口述筆記させてみた＆AIによる校正記事</title><link>https://blog.fuzoufugen.net/p/switched-to-giscus-comments/</link><pubDate>Sun, 13 Jul 2025 13:42:13 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/switched-to-giscus-comments/</guid><description>&lt;h2 id="コメントシステムを入れ替えました"&gt;コメントシステムを入れ替えました
+&lt;/h2&gt;&lt;p&gt;このブログのコメントシステムを、新しく&lt;strong&gt;Giscus&lt;/strong&gt;というものに入れ替えました。&lt;/p&gt;
+&lt;p&gt;というのも、今まで使っていたシステムが、どうも動作が不安定で…。公式サイトもあまり動いている感じがしなかったので、思い切って変更することにしました。&lt;/p&gt;
+&lt;p&gt;正直、僕のブログは本当に小さな場所なので、コメントが来ることもほとんど無いんですけどね。それでも、一応は置いておきたいなと。&lt;/p&gt;
+&lt;h2 id="giscusってどんな感じ"&gt;Giscusって、どんな感じ？
+&lt;/h2&gt;&lt;p&gt;今回導入したGiscusは、GitHubのDiscussions（ディスカッション）機能を使ったコメントシステムです。&lt;br&gt;
+使ってみて感じた良いところは、こんな感じです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;とにかく動作が軽い&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プライバシーが守られてる（追跡とか広告がない）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;テーマの見た目をカスタムできる&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ちゃんと日本語に対応してる&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自分で管理できる安心感&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以前のシステムより断然いいですね。設定もスクリプトを追加するだけなので簡単でした。&lt;/p&gt;
+&lt;h2 id="唯一のネックなところ"&gt;唯一のネックなところ
+&lt;/h2&gt;&lt;p&gt;ただ一つ、面倒な点があります。それは、&lt;strong&gt;コメントするのにGitHubのアカウントが必須&lt;/strong&gt;なことです。&lt;/p&gt;
+&lt;p&gt;サイトに来てくれた方にGitHubログインを強要する形になるのは、ちょっと申し訳ないんですけど、こればっかりはシステム上どうしようもないかなと。&lt;/p&gt;
+&lt;p&gt;というのも、他の無料コメントシステムって、無料で使えるのはいいんですが、何て言うか…大抵、動作が重かったり、やたら設定がやりづらかったりするんですよね。&lt;/p&gt;
+&lt;p&gt;その点、Giscusは自分で管理できるし、今のところこれが一番の最適解かなと思っています。&lt;/p&gt;
+&lt;h2 id="設定方法とか"&gt;設定方法とか
+&lt;/h2&gt;&lt;p&gt;Hugo Stackテーマなら、&lt;code&gt;hugo.toml&lt;/code&gt;みたいな設定ファイルにGiscusからもらってきたIDとかを書き込むだけです。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# hugo.tomlの場合&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;giscus&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;repo&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;自分のGitHubユーザー名/リポジトリ名&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;repoId&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;リポジトリのID&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;category&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;設定したディスカッションのカテゴリ名&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;categoryId&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;カテゴリのID&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;lang&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ja&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;theme&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;preferred_color_scheme&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;詳しいことは公式サイトを見たほうが早いと思います。&lt;/p&gt;
+&lt;h2 id="追伸"&gt;追伸
+&lt;/h2&gt;&lt;p&gt;この記事は、僕が話した内容を元に、AIアシスタントのGeminiに構成や文章の整理を手伝ってもらいました。いわば口述筆記をAIに清書してもらった、という感じです。&lt;/p&gt;</description></item><item><title>久しぶりの更新と、Hugoの扱いの難しさ</title><link>https://blog.fuzoufugen.net/p/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AE%E6%9B%B4%E6%96%B0%E3%81%A8hugo%E3%81%AE%E6%89%B1%E3%81%84%E3%81%AE%E9%9B%A3%E3%81%97%E3%81%95/</link><pubDate>Sat, 12 Jul 2025 03:09:21 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AE%E6%9B%B4%E6%96%B0%E3%81%A8hugo%E3%81%AE%E6%89%B1%E3%81%84%E3%81%AE%E9%9B%A3%E3%81%97%E3%81%95/</guid><description>&lt;h2 id="本当に久しぶりの更新"&gt;本当に久しぶりの更新
+&lt;/h2&gt;&lt;h3 id="しばらくネットから離れていました"&gt;しばらくネットから離れていました
+&lt;/h3&gt;&lt;p&gt;ブログを以前から見ていてくれていた方、お久しぶりです。日記もかねて、ご報告します。リアルの方で無事いろいろと終えました。&lt;/p&gt;
+&lt;p&gt;個人を特定されそうなので書けないことしかないのですが、ネット断ちってのはかなりきつかったです。でもまあいい経験にはなりました。&lt;/p&gt;
+&lt;h2 id="hugoブログに若干の手入れ"&gt;Hugo：ブログに若干の手入れ
+&lt;/h2&gt;&lt;h3 id="フォント"&gt;フォント
+&lt;/h3&gt;&lt;p&gt;以前の丸っこいフォントから、愛用しているMDPゴシックに変更しました。特に深く考えず、ブログ全体に適用したので、雰囲気がちょっと変わったと思います。変に文字だけがゴツいような印象に変わったように思います。本文をもっと見やすくしたかったので、たぶんずっとこれで行くと思います。&lt;/p&gt;
+&lt;h3 id="テーマのアップデート"&gt;テーマのアップデート
+&lt;/h3&gt;&lt;p&gt;Gemini 2.5 に分からないところを投げたら、コード付きですぐに解答をくれました。プログラムの本もまともに読んでないので、人工知能を先生にして、なんとかこのブログを動かしています。&lt;/p&gt;
+&lt;p&gt;モジュールのアップデートして、V.3.0.0 にしました。なんというか、.toml ファイルの中を書き換えてpaginate から[pagination] pagerSize = 10 という表記に書き換えなくちゃいけないそうで、これだけでも難しかったです。いろいろいじってると破損してしまうので、こわごわ行いました。&lt;/p&gt;
+&lt;h2 id="netlify-への移行が失敗"&gt;netlify への移行が失敗
+&lt;/h2&gt;&lt;h3 id="なにしたか"&gt;なにしたか
+&lt;/h3&gt;&lt;p&gt;いまこのブログはCloudflare Pages で動いているんですが、いつサービスが改悪されるかわからないので、有料でもいいからnetlifyに移行させようと考えたのですが、完全に沼にハマり、もうしっちゃかめっちゃかです。実を言うといまこのブログが問題なく稼働してるのが奇跡なんですよね。一年前に奮闘してどうにかこうやってネットの海に公開できるようにはしたんですが、設定で躓きまくって、どうしよーもない。&lt;/p&gt;
+&lt;p&gt;英語は好きなんですがほとんど読めないので、公式のドキュメントも正しいんだが間違ってるんだが、古いのを読んでるのか新しいのを読んでるのかわからん。Geminiに訊くほかなかったです。&lt;/p&gt;
+&lt;h3 id="触らぬ神に祟りなし"&gt;触らぬ神に祟りなし
+&lt;/h3&gt;&lt;p&gt;netlify への移行は諦め、このままcloudflare で運用することにしました。まあ変なことさえしなければ大丈夫だろう。&lt;/p&gt;
+&lt;h2 id="まとめ"&gt;まとめ
+&lt;/h2&gt;&lt;p&gt;とりあえずブログについては以上です。今度はもっと日記らしいことを書きます。最近、Sonos のスピーカーを買いそろえました。Era 100二台をリアにして、Sonos Ray を正面に。かなり音質が良いので満足してます。詳しくは次の記事で。ではまた。&lt;/p&gt;
+&lt;h2 id="参考にしたサイト"&gt;参考にしたサイト
+&lt;/h2&gt;&lt;p&gt;HugoのStackテーマのブログにgiscusを導入する - かつおぶしのブログ&lt;br&gt;
+&lt;a class="link" href="https://blog.k-bushi.com/post/tech/web/instoducing-giscus-with-hugo-stack/" target="_blank" rel="noopener"
+&gt;https://blog.k-bushi.com/post/tech/web/instoducing-giscus-with-hugo-stack/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hugoにコメント機能を付ける（giscus編） - k-kaz が Hugo で遊ぶサイト&lt;br&gt;
+&lt;a class="link" href="https://k-kaz-git.github.io/post/hugo-comment-giscus/" target="_blank" rel="noopener"
+&gt;https://k-kaz-git.github.io/post/hugo-comment-giscus/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>サイトにR18警告を実装するべき？</title><link>https://blog.fuzoufugen.net/p/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%ABr18%E8%AD%A6%E5%91%8A%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B%E3%81%B9%E3%81%8D/</link><pubDate>Sun, 17 Mar 2024 15:37:54 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%ABr18%E8%AD%A6%E5%91%8A%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B%E3%81%B9%E3%81%8D/</guid><description>&lt;h2 id="これはなに"&gt;これはなに
+&lt;/h2&gt;&lt;p&gt;意気揚々とサイトを開設したのは良いんですが、置いている内容が成人向けのモノが主な投稿だとして、未成年の眼に触れないようにする配慮は必要なのでしょうか？&lt;/p&gt;
+&lt;p&gt;巷のアダルト系サイトなどで、クローラー対策を踏まえて「あなたは18才以上ですか？」のような警告文が表示されるようにしているサイトが大半だと思うのですが、やはり用意するべきなのかなあと考えて色々調べましたが、HP作りの専門家や総統に習熟した人でもない限り、この処理を実行できるようにするのは無理そうです……。&lt;/p&gt;
+&lt;p&gt;広告などを設置する予定もほぼないですし、しばらく現状のままで行こうかなと思っています。&lt;br&gt;
+いろいろ訳わかっていないところが多すぎるので、やはり一から勉強するしかないか……。&lt;/p&gt;</description></item><item><title>コメントのテスト</title><link>https://blog.fuzoufugen.net/p/%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88/</link><pubDate>Sun, 17 Mar 2024 00:27:22 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88/</guid><description>&lt;h2 id="これはなに"&gt;これはなに
+&lt;/h2&gt;&lt;p&gt;コメント機能のテスト用記事です。&lt;/p&gt;
+&lt;h2 id="ルビのテスト兼備忘録"&gt;ルビのテスト兼備忘録
+&lt;/h2&gt;&lt;p&gt;&lt;ruby&gt;漢字&lt;rp&gt;（&lt;/rp&gt;&lt;rt&gt;かんじ&lt;/rt&gt;&lt;rp&gt;）&lt;/rp&gt;&lt;/ruby&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;ruby&gt;漢字&lt;rt&gt;かんじ&lt;/rt&gt;&lt;/ruby&gt; と記述すると、&amp;lt;ruby&amp;gt;漢字&amp;lt;rt&amp;gt;かんじ&amp;lt;/rt&amp;gt;&amp;lt;/ruby&amp;gt; と同じように表示されます。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="参考文献url"&gt;参考文献・URL
+&lt;/h2&gt;&lt;p&gt;Stack ドキュメント&lt;br&gt;
+&lt;a class="link" href="https://stack.jimmycai.com/config/comments#provider" target="_blank" rel="noopener"
+&gt;https://stack.jimmycai.com/config/comments#provider&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;giscus&lt;br&gt;
+&lt;a class="link" href="https://cdwilson.dev/articles/using-giscus-for-comments-in-hugo/" target="_blank" rel="noopener"
+&gt;https://cdwilson.dev/articles/using-giscus-for-comments-in-hugo/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;HUGOにコメント投稿機能(Disqus)を組み込む方法&lt;br&gt;
+&lt;a class="link" href="https://itsys-tech.com/list/hugo/004/" target="_blank" rel="noopener"
+&gt;https://itsys-tech.com/list/hugo/004/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hugoにコメント機能を付ける&lt;br&gt;
+&lt;a class="link" href="https://k-kaz-git.github.io/post/hugo-comment/" target="_blank" rel="noopener"
+&gt;https://k-kaz-git.github.io/post/hugo-comment/&lt;/a&gt;&lt;br&gt;
+&lt;a class="link" href="https://k-kaz-git.github.io/post/hugo-comment-giscus/" target="_blank" rel="noopener"
+&gt;https://k-kaz-git.github.io/post/hugo-comment-giscus/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>サイトの構築に手間取った話</title><link>https://blog.fuzoufugen.net/p/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E6%A7%8B%E7%AF%89%E3%81%AB%E6%89%8B%E9%96%93%E5%8F%96%E3%81%A3%E3%81%9F%E8%A9%B1/</link><pubDate>Sat, 16 Mar 2024 20:06:52 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E6%A7%8B%E7%AF%89%E3%81%AB%E6%89%8B%E9%96%93%E5%8F%96%E3%81%A3%E3%81%9F%E8%A9%B1/</guid><description>&lt;h2 id="雑感"&gt;雑感
+&lt;/h2&gt;&lt;p&gt;三日三晩かけて、ようやくサイトのひな型ができた。結局人気テーマのStack 以外には移れず。&lt;br&gt;
+Github の使い方が分からずに勘でやっていたら、指示通りにすべきところをすっ飛ばしていたり、Hugoの実行ファイルに通常版とextended 版があるのに気付かず詰まったりしていた。&lt;/p&gt;
+&lt;p&gt;英語の解説は目が滑って良くない。&lt;/p&gt;
+&lt;h2 id="hugo-のタグ機能"&gt;Hugo のタグ機能
+&lt;/h2&gt;&lt;p&gt;どういうわけか、こういったポストの記事にタグを設定しようとすると、わけのわからないエラーが出てデプロイに失敗する。&lt;br&gt;
+解決策が分からないため放置。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;21:07:37.812 Error: error building site: render: failed to render pages: render of &amp;#34;page&amp;#34; failed: &amp;#34;/opt/buildhome/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!cai!jimmy/hugo-theme-stack/v3@v3.24.1/layouts/_default/baseof.html:4:12&amp;#34;: execute of template failed: template: _default/single.html:4:12: executing &amp;#34;_default/single.html&amp;#34; at &amp;lt;partial &amp;#34;head/head.html&amp;#34; .&amp;gt;: error calling partial: &amp;#34;/opt/buildhome/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!cai!jimmy/hugo-theme-stack/v3@v3.24.1/layouts/partials/head/head.html:15:4&amp;#34;: execute of template failed: template: partials/head/head.html:15:4: executing &amp;#34;partials/head/head.html&amp;#34; at &amp;lt;partial &amp;#34;head/opengraph/include.html&amp;#34; .&amp;gt;: error calling partial: &amp;#34;/opt/buildhome/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!cai!jimmy/hugo-theme-stack/v3@v3.24.1/layouts/partials/head/opengraph/include.html:1:3&amp;#34;: execute of template failed: template: partials/head/opengraph/include.html:1:3: executing &amp;#34;partials/head/opengraph/include.html&amp;#34; at &amp;lt;partial &amp;#34;head/opengraph/provider/base&amp;#34; .&amp;gt;: error calling partial: &amp;#34;/opt/buildhome/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!cai!jimmy/hugo-theme-stack/v3@v3.24.1/layouts/partials/head/opengraph/provider/base.html:22:21&amp;#34;: execute of template failed: template: partials/head/opengraph/provider/base.html:22:21: executing &amp;#34;partials/head/opengraph/provider/base.html&amp;#34; at &amp;lt;.Params.tags&amp;gt;: range can&amp;#39;t iterate over Blog
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;21:07:37.818 Failed: Error while executing user command. Exited with error code: 1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;21:07:37.828 Failed: build command exited with code: 1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;21:07:38.858 Failed: error occurred while running build command
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;という具合。&lt;/p&gt;
+&lt;h2 id="cloudflare-pages"&gt;Cloudflare Pages
+&lt;/h2&gt;&lt;p&gt;プレビュー側で依然としてデプロイに失敗するので、もうあきらめて、自動デプロイをOFFにした。&lt;br&gt;
+解決策を知っている方、教えてください……m(__)m&lt;/p&gt;</description></item><item><title>Zohoのブラウザ『Ulaa』を使ってみた</title><link>https://blog.fuzoufugen.net/p/zoho%E3%81%AE%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6ulaa%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link><pubDate>Fri, 15 Mar 2024 15:57:57 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/zoho%E3%81%AE%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6ulaa%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</guid><description>&lt;h2 id="これはなに"&gt;これはなに
+&lt;/h2&gt;&lt;p&gt;オフィスツールで有名なZohoが作ったブラウザ、『Ulaa』&lt;/p&gt;
+&lt;p&gt;パーソナルモード、デベロッパーモード、キッズモードなどモードを切り替えられるブラウザ。&lt;br&gt;
+Chromium 派生かと思ったら、Brave と外観が似ている。シンプルな見た目だし、軽快に動作するので、以前までいれていた『Avast Secure Browser』を代替して使用している。&lt;br&gt;
+当然Zohoのサービスが使いやすいのも優れている。スタートページは独自仕様で、よく訪れるサイトなどが表示される形式。&lt;/p&gt;
+&lt;h2 id="自動アップデートが上手く行かない"&gt;自動アップデートが上手く行かない
+&lt;/h2&gt;&lt;p&gt;自分の環境だけかもしれないが、内蔵されている自動アップデーターがインストールされておらず、アップデートに手間取る。いまはいちいちインストーラーを公式サイトから入手して、その都度アップデートしている。ヘルプにあるように一度削除して、インストールし直した方が良いかもしれない。&lt;/p&gt;
+&lt;h2 id="参考文献url"&gt;参考文献・URL
+&lt;/h2&gt;&lt;p&gt;ulaa - zoho&lt;br&gt;
+&lt;a class="link" href="https://ulaa.com/" target="_blank" rel="noopener"
+&gt;https://ulaa.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to fix Ulaa update issue in Windows - Ulaa Support&lt;br&gt;
+&lt;a class="link" href="https://ulaabrowser.zohodesk.com/portal/en/kb/articles/windows-update-troubleshooting" target="_blank" rel="noopener"
+&gt;https://ulaabrowser.zohodesk.com/portal/en/kb/articles/windows-update-troubleshooting&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Chromium 派生ブラウザ総合　まとめWiki&lt;br&gt;
+&lt;a class="link" href="https://w.atwiki.jp/chromiumbased/" target="_blank" rel="noopener"
+&gt;https://w.atwiki.jp/chromiumbased/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>WordPressToHugo</title><link>https://blog.fuzoufugen.net/p/wordpresstohugo/</link><pubDate>Fri, 15 Mar 2024 01:40:30 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/wordpresstohugo/</guid><description>&lt;h2 id="wordpress-に敗退"&gt;WordPress に敗退
+&lt;/h2&gt;&lt;p&gt;せっかくレンタルサーバーまで借りてドメイン購入後にWordPress をインストールしたまでは良かったんだけど、なんとなく選んだテーマにとっつきにくさを感じ、Hugoにすることにした。&lt;br&gt;
+決め手は、pixiv ノベルのUIに外観を寄せたテーマがgithub で公開されていたから。ほとんど一目ぼれして、さっそく環境構築したんだけど、これがむずかしいのなんの……。コマンドラインとかターミナルとか、かなり長くパソコンを触ってきた割にはあまり触れてこなかったし、ときどき発作的にプログラマになろうとして挫折もかなりした。&lt;br&gt;
+ソフトのインストールぐらいはできるし、環境変数の設定とかもブログの記事見ながらならなんとなくできるんだけど、実際それがどういう原理で動いてるのかわからないと不安になる。ケモノの内蔵触ってるみたいな感じでおっかなびっくり。&lt;br&gt;
+まあなんとか実行ファイルをフォルダに入れて見様見真似でやって、気づいたらこの時間ですわ。&lt;/p&gt;
+&lt;h2 id="cloudflare-pages"&gt;Cloudflare pages
+&lt;/h2&gt;&lt;p&gt;サーバーをわざわざ契約しなくてもこっちのタイプのブログならほぼノーコストでできると知った。WordPressはロリポップで運用しているが、いちいちユーザー名やパスワードを入れなきゃいけないのが面倒くさいため、昔のHTMLに似たこのやり方の方がトータルでは楽なのかも知れない。&lt;/p&gt;
+&lt;p&gt;Github のリポジトリと連携してデプロイ？をほぼ全自動でやってくれるため、わけがわからないままやってもなんとかなった。&lt;br&gt;
+ただ、なぜか本番側のデプロイは上手く行っているのに、プレビュー版が構築に失敗しているらしくエラーを吐いている。これは無視。ログに表示されているエラーコードをいくら読んでも原因が分からない、本番さえうまく動いてくれればいい。&lt;/p&gt;
+&lt;h2 id="総評"&gt;総評
+&lt;/h2&gt;&lt;p&gt;WordPress で作ったサイトよりもかなり早くサイトを読み込んでくれるため、ストレスフリーですばらしい。煩わしいプラグインの管理からも解放されたので、満足している。なによりも手作りであることが良い。&lt;/p&gt;
+&lt;p&gt;今日は眠いので作業の詳細は後日。&lt;/p&gt;
+&lt;h2 id="参考文献url"&gt;参考文献・URL
+&lt;/h2&gt;&lt;p&gt;以下世話になったサイトなど&lt;/p&gt;
+&lt;p&gt;Stack&lt;br&gt;
+&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-theme-stack/" target="_blank" rel="noopener"
+&gt;https://themes.gohugo.io/themes/hugo-theme-stack/&lt;/a&gt;&lt;br&gt;
+人気の高いテーマっぽい。結構使ってる人を見かける。&lt;/p&gt;
+&lt;p&gt;vnovel&lt;br&gt;
+&lt;a class="link" href="https://github.com/tmmsgm/vnovel" target="_blank" rel="noopener"
+&gt;https://github.com/tmmsgm/vnovel&lt;/a&gt;&lt;br&gt;
+pixiv ノベルライクなテーマ。まんま。&lt;/p&gt;
+&lt;p&gt;Cloudflare Pages&lt;br&gt;
+&lt;a class="link" href="https://pages.cloudflare.com/" target="_blank" rel="noopener"
+&gt;https://pages.cloudflare.com/&lt;/a&gt;&lt;br&gt;
+ﾈ申。マジで。全自動でなにもかもやってくれる。&lt;/p&gt;
+&lt;p&gt;Hugo 静的サイトジェネレーターによるサイト構築と公開　パソコン工房NEXMAG&lt;br&gt;
+&lt;a class="link" href="https://www.pc-koubou.jp/magazine/30737?utm_source=pocket_saves" target="_blank" rel="noopener"
+&gt;https://www.pc-koubou.jp/magazine/30737?utm_source=pocket_saves&lt;/a&gt;&lt;br&gt;
+Hugoインストールはこの記事のおかげで楽だった。フォルダ階層の仕組みもなんとか頭に入った。&lt;/p&gt;</description></item></channel></rss>
