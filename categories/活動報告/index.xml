@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>活動報告 on 不増不減.net</title><link>https://blog.fuzoufugen.net/categories/%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A/</link><description>Recent content in 活動報告 on 不増不減.net</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 06 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fuzoufugen.net/categories/%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A/index.xml" rel="self" type="application/rss+xml"/><item><title>ヴァイヴコーディングでミニPCをリモートして、Hugoを操作してみた</title><link>https://blog.fuzoufugen.net/p/%E3%83%B4%E3%82%A1%E3%82%A4%E3%83%B4%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A7%E3%83%9F%E3%83%8Bpc%E3%82%92%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%81%97%E3%81%A6hugo%E3%82%92%E6%93%8D%E4%BD%9C%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://blog.fuzoufugen.net/p/%E3%83%B4%E3%82%A1%E3%82%A4%E3%83%B4%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A7%E3%83%9F%E3%83%8Bpc%E3%82%92%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%81%97%E3%81%A6hugo%E3%82%92%E6%93%8D%E4%BD%9C%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</guid><description>&lt;p&gt;※この記事はClaudeによって作成されました。&lt;/p&gt;
+&lt;h2 id="はじめに訳が分からないまま始まった環境構築の旅"&gt;はじめに：訳が分からないまま始まった環境構築の旅
+&lt;/h2&gt;&lt;p&gt;正直に言うと、私はプログラミングのド初心者です。Hugoでブログを始めようと決めたものの、コマンドラインでの操作にはまだ慣れていません。「新規記事を作りたい」という単純な願いから、思いもよらぬ深い世界へと引きずり込まれることになりました。&lt;/p&gt;
+&lt;p&gt;この記事は、そんな初心者が&lt;strong&gt;Claude&lt;/strong&gt;というAIアシスタントに頼りきりながら、&lt;strong&gt;ヴァイヴコーディング&lt;/strong&gt;という手法で、リモートマシン上のHugo環境を整えた一部始終の記録です。&lt;/p&gt;
+&lt;h2 id="発端postとpostsが混在する謎"&gt;発端：postとpostsが混在する謎
+&lt;/h2&gt;&lt;p&gt;ことの発端は、Hugoで新規記事を作成しようとしたときのことでした。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new posts/記事名.md
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;このコマンドを実行すると、&lt;code&gt;content/posts/&lt;/code&gt;というフォルダに記事が作成される…はずでした。ところが、プロジェクト内を見てみると、&lt;code&gt;content/post/&lt;/code&gt;と&lt;code&gt;content/posts/&lt;/code&gt;という、よく似た2つのフォルダが混在していることに気づいたのです。&lt;/p&gt;
+&lt;p&gt;「どっちが正しいの？」&lt;/p&gt;
+&lt;p&gt;Hugoの公式ドキュメントを見ても、「複数形が主流」という程度の情報しかなく、プロジェクト内で統一されていないこの状態をどうすればいいのか分かりませんでした。&lt;/p&gt;
+&lt;p&gt;設定ファイルの中身を見ても、&lt;code&gt;permalinks.toml&lt;/code&gt;や&lt;code&gt;params.toml&lt;/code&gt;の中で&lt;code&gt;post&lt;/code&gt;と書かれている箇所がある。でも、どこを直せばいいのか、直したら何が壊れるのか、初心者の私には判断がつきません。&lt;/p&gt;
+&lt;p&gt;「手動でファイルを移すだけだと、内部的に統一が取れず挙動がややこしくなりそう…」&lt;/p&gt;
+&lt;p&gt;そう思った私は、Claudeに相談することにしました。&lt;/p&gt;
+&lt;h2 id="claude-codeとの出会い"&gt;Claude Codeとの出会い
+&lt;/h2&gt;&lt;p&gt;Claudeとのチャットで相談していると、「&lt;strong&gt;Claude Code&lt;/strong&gt;」というツールの存在を教えてもらいました。&lt;/p&gt;
+&lt;p&gt;Claude Codeは、ターミナル上で動作するAIコーディングアシスタントで、ファイルの編集や移動、設定ファイルの書き換えなどを自動で行ってくれるそうです。&lt;/p&gt;
+&lt;p&gt;「これなら、私が間違えることなく、プロジェクト全体で統一できるかも？」&lt;/p&gt;
+&lt;p&gt;しかし、ここで新たな疑問が浮かびます。&lt;/p&gt;
+&lt;h3 id="pro-planで使えるの"&gt;Pro Planで使えるの？
+&lt;/h3&gt;&lt;p&gt;私はClaude Pro Plan（月額$20）に加入していますが、Claude Codeは追加料金がかかるのでしょうか？&lt;/p&gt;
+&lt;p&gt;調べてもらったところ、&lt;strong&gt;Pro PlanでClaude Codeが使える&lt;/strong&gt;ことが判明しました。Web、デスクトップ、モバイルのClaudeと、ターミナルのClaude Codeが、1つの統合されたサブスクリプションで使えるとのこと。&lt;/p&gt;
+&lt;p&gt;これは朗報です。追加費用なしで使えるなら、試してみない手はありません。&lt;/p&gt;
+&lt;h2 id="インストールの試行錯誤"&gt;インストールの試行錯誤
+&lt;/h2&gt;&lt;h3 id="まずはインストール方法を調べる"&gt;まずはインストール方法を調べる
+&lt;/h3&gt;&lt;p&gt;Claude Codeの公式ドキュメントを見ると、インストール方法がいくつか記載されています。&lt;/p&gt;
+&lt;p&gt;私の環境はLinuxなので、以下のコマンドを実行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -fsSL https://claude.ai/install.sh &lt;span class="p"&gt;|&lt;/span&gt; bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;ところが、最初に試したURL（&lt;code&gt;https://api.anthropic.com/install.sh&lt;/code&gt;）では404エラーが出てしまいました。正しいURLを教えてもらい、無事インストール完了。&lt;/p&gt;
+&lt;p&gt;しかし、&lt;code&gt;claude&lt;/code&gt;コマンドを実行しても「コマンドが見つかりません」と表示されます。&lt;/p&gt;
+&lt;h3 id="パスが通っていない問題"&gt;パスが通っていない問題
+&lt;/h3&gt;&lt;p&gt;どうやらインストールされたClaude Codeのバイナリにパスが通っていなかったようです。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ls -la ~/.local/bin/claude
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;ファイルは存在しているのに、実行できない。そこでパスを通す作業：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;export PATH=&amp;#34;$HOME/.local/bin:$PATH&amp;#34;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;これで無事に&lt;code&gt;claude --version&lt;/code&gt;が動作しました！&lt;/p&gt;
+&lt;h2 id="リモート接続の壁"&gt;リモート接続の壁
+&lt;/h2&gt;&lt;p&gt;ここで私は気づきました。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;「Windows PCから、別のミニPC上のHugoプロジェクトを操作したい」&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;WindowsのメインPCにClaude Codeをインストールして、そこからリモートでミニPC上のHugoディレクトリを操作できないだろうか？　そう思ったのです。&lt;/p&gt;
+&lt;h3 id="いくつかの選択肢"&gt;いくつかの選択肢
+&lt;/h3&gt;&lt;p&gt;Claudeに相談すると、いくつかの方法を提示されました：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;SSH経由でリモートマシン上のClaude Codeを実行&lt;/strong&gt;（推奨）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VS Code Remote SSH + Claude Code&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ネットワークドライブとしてマウント&lt;/strong&gt;（非推奨）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最もシンプルで確実なのは、1番目の方法。つまり、Windows PCからSSHでミニPCに接続して、ミニPC上でClaude Codeを実行する形です。&lt;/p&gt;
+&lt;h3 id="リモートマシンのipアドレスを調べる"&gt;リモートマシンのIPアドレスを調べる
+&lt;/h3&gt;&lt;p&gt;そこで次の疑問：「リモートマシンのIPアドレスってどうやって調べるの？」&lt;/p&gt;
+&lt;p&gt;Claudeに教えてもらったコマンド：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ip addr show
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;このコマンドで&lt;code&gt;192.168.x.x&lt;/code&gt;のようなローカルIPアドレスが表示されます。&lt;/p&gt;
+&lt;p&gt;しかし、ここでさらに良い方法があることを知りました。&lt;/p&gt;
+&lt;h3 id="tailscaleのipアドレスを使う"&gt;TailscaleのIPアドレスを使う
+&lt;/h3&gt;&lt;p&gt;私はTailscaleでネットワークを構築していました。Tailscaleを使えば：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;外出先からでもアクセス可能&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;暗号化された通信&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NAT越えの問題を自動解決&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;というメリットがあります。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;tailscale ip -4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;このコマンドで&lt;code&gt;100.x.x.x&lt;/code&gt;というTailscale専用のIPアドレスが表示されました。これを使ってSSH接続すれば、どこからでも安全にアクセスできます。&lt;/p&gt;
+&lt;h2 id="セキュリティを考慮した接続方法"&gt;セキュリティを考慮した接続方法
+&lt;/h2&gt;&lt;p&gt;次に考えたのは、SSH接続の安全性です。&lt;/p&gt;
+&lt;h3 id="sshサーバーをインストールすべきか"&gt;SSHサーバーをインストールすべきか？
+&lt;/h3&gt;&lt;p&gt;通常、SSH接続するにはリモートマシンにOpenSSHサーバーをインストールする必要があります。しかし、Claudeに相談すると：&lt;/p&gt;
+&lt;p&gt;「TailscaleのIPアドレス経由でのみ使う限り安全ですが、より安心したいなら&lt;strong&gt;Tailscale SSH&lt;/strong&gt;機能を使うのがベストです」&lt;/p&gt;
+&lt;p&gt;との回答。&lt;/p&gt;
+&lt;h3 id="tailscale-sshを有効にする"&gt;Tailscale SSHを有効にする
+&lt;/h3&gt;&lt;p&gt;Tailscale SSHは、OpenSSHサーバーをインストールしなくても、Tailscaleが提供するSSH機能を使える仕組みです。&lt;/p&gt;
+&lt;p&gt;リモートマシンで以下を実行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo tailscale &lt;span class="nb"&gt;set&lt;/span&gt; --operator&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;tailscale up --ssh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;これだけで、Tailscaleネットワーク内からSSH接続できるようになりました。&lt;/p&gt;
+&lt;p&gt;Windows側から接続：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh ”ここにユーザー名”@100.x.x.x
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;初回接続時に認証確認が出ますが、&lt;code&gt;yes&lt;/code&gt;と入力すれば接続完了。パスフレーズを入力（画面には何も表示されませんが、入力されています）すると、無事にリモートマシンのターミナルに接続できました！&lt;/p&gt;
+&lt;h2 id="claude-codeでの実作業"&gt;Claude Codeでの実作業
+&lt;/h2&gt;&lt;p&gt;接続が確立したので、いよいよHugoプロジェクトでの作業です。&lt;/p&gt;
+&lt;h3 id="hugoプロジェクトに移動してclaude-codeを起動"&gt;Hugoプロジェクトに移動してClaude Codeを起動
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /mnt/syncroot2tb/projects/my.fuzoufugen.net
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;claude
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;初回起動時にログイン画面が表示されるので、Claude.aiと同じアカウントでログイン。&lt;/p&gt;
+&lt;h3 id="依頼内容を伝える"&gt;依頼内容を伝える
+&lt;/h3&gt;&lt;p&gt;Claude Codeが起動したら、自然言語で依頼します：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;このHugoプロジェクト内で「post」と「posts」が混在している箇所を全て洗い出して、
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;「posts」に統一してください。具体的には：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1. content/post/ フォルダがあれば content/posts/ に移動
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2. 設定ファイル内の「post」を「posts」に置換
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3. archetypes/post.md があれば posts.md にリネーム
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;4. その他、postを参照している箇所を全て検索して報告
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;作業前に変更内容を確認させてください。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="自動で分析実行してくれる"&gt;自動で分析・実行してくれる
+&lt;/h3&gt;&lt;p&gt;すると、Claude Codeは：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;プロジェクト内を分析&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;content/post/&lt;/code&gt;内の11記事を&lt;code&gt;content/posts/&lt;/code&gt;に移動&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;config/_default/permalinks.toml&lt;/code&gt;と&lt;code&gt;params.toml&lt;/code&gt;を修正&lt;/li&gt;
+&lt;li&gt;動作確認（&lt;code&gt;hugo server&lt;/code&gt;でエラーがないか確認）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;これらを全て自動で実行してくれました。&lt;/p&gt;
+&lt;p&gt;しかも、各ステップで「これから〇〇を実行します。よろしいですか？」と確認してくれるので、初心者の私でも安心して任せられました。&lt;/p&gt;
+&lt;h2 id="他のai-cliツールとの比較"&gt;他のAI CLIツールとの比較
+&lt;/h2&gt;&lt;p&gt;ここまでの体験で、「他にも似たようなツールはあるのかな？」と気になりました。&lt;/p&gt;
+&lt;p&gt;Claudeに聞いてみると、以下のようなツールがあることを知りました：&lt;/p&gt;
+&lt;h3 id="github-copilot-cli"&gt;GitHub Copilot CLI
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;GitHubが提供&lt;/li&gt;
+&lt;li&gt;シェルコマンドやGit操作の提案に特化&lt;/li&gt;
+&lt;li&gt;月額$10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="aider"&gt;Aider
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;オープンソース&lt;/li&gt;
+&lt;li&gt;複数のLLM対応（GPT-4、Claude、Geminiなど）&lt;/li&gt;
+&lt;li&gt;Git統合が強力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="gemini-cli"&gt;Gemini CLI
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Google公式、オープンソース&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;個人利用は完全無料&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;60リクエスト/分、1,000リクエスト/日&lt;/li&gt;
+&lt;li&gt;Google Search統合が強力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="openai-codex"&gt;OpenAI Codex
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ChatGPT Plus ($20/月)に含まれる&lt;/li&gt;
+&lt;li&gt;CLI、Web、IDE拡張、GitHub統合など多彩&lt;/li&gt;
+&lt;li&gt;クラウドで並列実行可能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;それぞれに特徴がありますが、私の場合はClaude Proプランに既に加入しているので、追加費用なしで使えるClaude Codeが最適でした。&lt;/p&gt;
+&lt;p&gt;ただし、Gemini CLIの無料枠の大きさは魅力的なので、今度試してみたいと思います。&lt;/p&gt;
+&lt;h2 id="typoraのインストール"&gt;Typoraのインストール
+&lt;/h2&gt;&lt;p&gt;Hugo記事の執筆環境を整えるため、Markdownエディタの&lt;strong&gt;Typora&lt;/strong&gt;もインストールすることにしました。&lt;/p&gt;
+&lt;h3 id="インストールコマンド"&gt;インストールコマンド
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo mkdir -p /etc/apt/keyrings
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -fsSL https://downloads.typora.io/typora.gpg &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/keyrings/typora.gpg &amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;deb [signed-by=/etc/apt/keyrings/typora.gpg] https://downloads.typora.io/linux ./&amp;#34;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/typora.list
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install typora
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;最初、改行が入ってしまってエラーが出ましたが、1行で実行することで無事インストール完了。&lt;/p&gt;
+&lt;h3 id="typoraのライセンス"&gt;Typoraのライセンス
+&lt;/h3&gt;&lt;p&gt;Typoraは買い切り型で$14.99（約2,000円）。1ライセンスで3台まで使えて、15日間の無料トライアル付き。サブスクリプションではないので、一度購入すればずっと使えるのが魅力的です。&lt;/p&gt;
+&lt;h2 id="おわりに初心者でもaiの力で環境構築できた"&gt;おわりに：初心者でもAIの力で環境構築できた
+&lt;/h2&gt;&lt;p&gt;振り返ってみると、この一連の作業で私は：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Claude Codeのインストールとパス設定&lt;/li&gt;
+&lt;li&gt;SSH接続とTailscale SSHの設定&lt;/li&gt;
+&lt;li&gt;リモートでのCLIツール操作&lt;/li&gt;
+&lt;li&gt;Hugoプロジェクトの構造理解&lt;/li&gt;
+&lt;li&gt;AI CLIツールの比較検討&lt;/li&gt;
+&lt;li&gt;Typoraのインストール&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これだけのことを学びました。&lt;/p&gt;
+&lt;p&gt;しかし、正直なところ、&lt;strong&gt;その大部分は訳が分からないまま進めていました&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;「パスって何？」「Tailscaleって安全なの？」「SSHサーバーをインストールすると危険なの？」&lt;/p&gt;
+&lt;p&gt;疑問だらけでしたが、Claudeに一つ一つ質問しながら、言われた通りにコマンドを実行していくことで、最終的には完璧に動作する環境を構築できました。&lt;/p&gt;
+&lt;p&gt;これが&lt;strong&gt;ヴァイヴコーディング&lt;/strong&gt;の力なのだと実感しました。&lt;/p&gt;
+&lt;h3 id="ヴァイヴコーディングとは"&gt;ヴァイヴコーディングとは？
+&lt;/h3&gt;&lt;p&gt;自分でコードを完全に理解していなくても、AIアシスタントと対話しながら、感覚的に（vibeで）開発を進めていく手法です。&lt;/p&gt;
+&lt;p&gt;従来のプログラミング学習では、「まず基礎を理解してから実践」という順序が重視されましたが、ヴァイヴコーディングでは：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;まず動くものを作る&lt;/li&gt;
+&lt;li&gt;AIに聞きながら進める&lt;/li&gt;
+&lt;li&gt;結果的に理解が深まる&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;という逆のアプローチが可能になります。&lt;/p&gt;
+&lt;h3 id="初心者こそaiを活用すべき"&gt;初心者こそAIを活用すべき
+&lt;/h3&gt;&lt;p&gt;今回の経験で強く思ったのは、&lt;strong&gt;初心者こそAIアシスタントを積極的に活用すべき&lt;/strong&gt;だということです。&lt;/p&gt;
+&lt;p&gt;プログラミングやサーバー管理の知識がなくても、適切な質問をすれば、AIが丁寧に教えてくれます。しかも、ただ教えるだけでなく、実際にコマンドを実行して作業を進めてくれるツール（Claude Codeなど）も登場しています。&lt;/p&gt;
+&lt;p&gt;「難しそうだから諦める」のではなく、「AIに聞けば何とかなる」という時代になったのです。&lt;/p&gt;
+&lt;h3 id="これからの執筆環境"&gt;これからの執筆環境
+&lt;/h3&gt;&lt;p&gt;こうして整えたHugo執筆環境で、これから記事を書いていきます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;リモートでミニPC上のHugoを操作&lt;/li&gt;
+&lt;li&gt;Typoraで快適にMarkdown執筆&lt;/li&gt;
+&lt;li&gt;Claude Codeで面倒な作業を自動化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;初心者の私でも、AIの力を借りることで、ここまでの環境を構築できました。&lt;/p&gt;
+&lt;p&gt;もし同じように「Hugo始めたいけど難しそう」と思っている方がいたら、ぜひAIアシスタントを活用してみてください。訳が分からなくても、案外なんとかなります。&lt;/p&gt;
+&lt;p&gt;それでは、良きHugoライフを！&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;使用したツール：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hugo（静的サイトジェネレーター）&lt;/li&gt;
+&lt;li&gt;Claude Code（AIコーディングアシスタント）&lt;/li&gt;
+&lt;li&gt;Tailscale（VPNツール）&lt;/li&gt;
+&lt;li&gt;Typora（Markdownエディタ）&lt;/li&gt;
+&lt;li&gt;Claude AI（チャットアシスタント）&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>自分の過去作が解釈違い、という話</title><link>https://blog.fuzoufugen.net/p/%E8%87%AA%E5%88%86%E3%81%AE%E9%81%8E%E5%8E%BB%E4%BD%9C%E3%81%8C%E8%A7%A3%E9%87%88%E9%81%95%E3%81%84%E3%81%A8%E3%81%84%E3%81%86%E8%A9%B1/</link><pubDate>Sun, 17 Mar 2024 17:07:00 +0900</pubDate><guid>https://blog.fuzoufugen.net/p/%E8%87%AA%E5%88%86%E3%81%AE%E9%81%8E%E5%8E%BB%E4%BD%9C%E3%81%8C%E8%A7%A3%E9%87%88%E9%81%95%E3%81%84%E3%81%A8%E3%81%84%E3%81%86%E8%A9%B1/</guid><description>&lt;h2 id="勢いで書いた過去の自分を呪ってる"&gt;勢いで書いた過去の自分を呪ってる
+&lt;/h2&gt;&lt;p&gt;【同人女】おけけパワー中島とゆかいな仲間たち（後編） | 真田つづる - pixiv&lt;br&gt;
+&lt;a class="link" href="https://www.pixiv.net/artworks/116975079#1" target="_blank" rel="noopener"
+&gt;https://www.pixiv.net/artworks/116975079#1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;　某所に投稿しているサヴァのシリーズの話。書くのを辞めてしまったわけでは決してないのですが、一話で描写したカオルの行動に関して、もう少し掘り下げて書くべきだったと絶賛後悔中です。&lt;/p&gt;
+&lt;p&gt;　当時は久しぶりにサヴァ熱が再燃したこともあり、自分が10代の頃に触れていたアニメの二次創作が仕上げられてすごく滾っていたので、そのままの勢いで投稿したのですが、エアバスケの試合でルナに抱き着かれて即座に引き離すカオル、というのはちょっと変かなぁと感じました。あまり自分の文章を投稿時以外には見返さないようにしているのですが、ある程度キャラの行動が頭の中で見えるようになるにしたがって、そこまで人目を気にするようなタイプではなく、そこで逆に固く抱きしめ返す、ぐらいのことはするんじゃないのかなあと、書かれたカオルと脳内のカオルのあいだでギャップが生じました。&lt;/p&gt;
+&lt;p&gt;　いっそ該当箇所を書き直そうかとも考えましたが、どちらかといえば恋愛強者ではない、ヘタレ要素のあるカオルの部分は残しておきたいのも事実なので、そういった羞恥の感情を超えてルナに愛をぶつけられるようになる、といった描写を組み込めばいいのかなあと目下考えています。&lt;/p&gt;
+&lt;p&gt;　何はともあれ、アーカイブ用のサイトもこうやって構築できたので、もう少し本腰入れて書きます。&lt;br&gt;
+　pixiv のいいね＆ブクマ、本当にありがたいです！期待しないで待っていただけると幸いです。&lt;/p&gt;</description></item></channel></rss>
