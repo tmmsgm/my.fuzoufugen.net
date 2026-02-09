@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "eb5823ebd129da31",
+    "type": "split",
+    "children": [
+      {
+        "id": "75698d075e69e40a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f736323b35b39984",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新規タブ"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e47868d8d198d83a",
+    "type": "split",
+    "children": [
+      {
+        "id": "9aacb3419937cbf9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "85a5e3433b511d14",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "ファイルエクスプローラ"
+            }
+          },
+          {
+            "id": "fb10c92377acb386",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "検索"
+            }
+          },
+          {
+            "id": "cccb4cebe43592b9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "ブックマーク"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cf4e8fd8e4317418",
+    "type": "split",
+    "children": [
+      {
+        "id": "653a14c474434d2f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "70f4c15d422b4f7f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ヴァイヴコーディングでミニPCをリモートして、Hugoを操作してみた/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "indexへのバックリンク"
+            }
+          },
+          {
+            "id": "b226bc18c06dc00a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "ヴァイヴコーディングでミニPCをリモートして、Hugoを操作してみた/index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "indexからのアウトゴーイングリンク"
+            }
+          },
+          {
+            "id": "924554195d6c72ea",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "タグ"
+            }
+          },
+          {
+            "id": "4a4a032f7034faed",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "すべてのプロパティ"
+            }
+          },
+          {
+            "id": "3a07edb1b41ea279",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ヴァイヴコーディングでミニPCをリモートして、Hugoを操作してみた/index.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "indexのアウトライン"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:クイックスイッチャーを開く": false,
+      "graph:グラフビューを開く": false,
+      "canvas:新規キャンバスを作成": false,
+      "daily-notes:今日のデイリーノートを開く": false,
+      "templates:テンプレートを挿入": false,
+      "command-palette:コマンドパレットを開く": false,
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "f736323b35b39984",
+  "lastOpenFiles": [
+    "ヴァイヴコーディングでミニPCをリモートして、Hugoを操作してみた/index.md",
+    "content/posts/TEST/index.md",
+    "content/posts/TEST",
+    "content/posts",
+    "content",
+    "_templates/New Hugo Post.md",
+    "_templates/新規 テキスト ドキュメント.txt",
+    "_templates",
+    "新しいフォルダー",
+    "このサイトの構築に手間取った話/index.md"
+  ]
+}
